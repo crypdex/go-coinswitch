@@ -5,9 +5,9 @@ import (
 	"strconv"
 )
 
-// Coins - This endpoint is used to retrieve all currencies supported by CoinSwitch
+// GetCoins - This endpoint is used to retrieve all currencies supported by CoinSwitch
 // https://developer.coinswitch.co/reference#apicoins
-func (c *CoinSwitch) Coins() ([]Coin, error) {
+func (c *CoinSwitch) GetCoins() ([]Coin, error) {
 	path := "/coins"
 	result := new(CoinResult)
 	if _, err := c.client.R().SetResult(result).Get(path); err != nil {
@@ -16,9 +16,9 @@ func (c *CoinSwitch) Coins() ([]Coin, error) {
 	return result.Data, nil
 }
 
-// Pairs - Get exchange pairs for a chosen depositCoin or destinationCoin
+// GetPairs - Get exchange pairs for a chosen depositCoin or destinationCoin
 // https://developer.coinswitch.co/reference#apipairs
-func (c *CoinSwitch) Pairs(depositCoin, destinationCoin string) ([]Pair, error) {
+func (c *CoinSwitch) GetPairs(depositCoin, destinationCoin string) ([]Pair, error) {
 	path := "/pairs"
 	result := new(PairsResult)
 
@@ -36,12 +36,12 @@ func (c *CoinSwitch) Pairs(depositCoin, destinationCoin string) ([]Pair, error) 
 	return result.Data, nil
 }
 
-// Rate - Generate an exchange offer for for a coin pair
+// GetRate - Generate an exchange offer for for a coin pair
 // https://developer.coinswitch.co/reference#apirate
 //
 // We are making an assumption here that if there is no data returned, but the request is successful
 // that there is no trading pair for the requested deposit/destination
-func (c *CoinSwitch) Rate(depositCoin, destinationCoin string) (*Rate, error) {
+func (c *CoinSwitch) GetRate(depositCoin, destinationCoin string) (*Rate, error) {
 	path := "/rate"
 	result := new(RateResult)
 

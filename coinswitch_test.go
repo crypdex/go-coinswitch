@@ -11,7 +11,7 @@ var apikey = ""
 var client = New(apikey)
 
 func TestCoinSwitch_Coins(t *testing.T) {
-	result, err := client.Coins()
+	result, err := client.GetCoins()
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -20,7 +20,7 @@ func TestCoinSwitch_Coins(t *testing.T) {
 }
 
 func TestCoinSwitch_Pairs(t *testing.T) {
-	result, err := client.Pairs("pivx", "")
+	result, err := client.GetPairs("pivx", "")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -29,7 +29,7 @@ func TestCoinSwitch_Pairs(t *testing.T) {
 }
 
 func TestCoinSwitch_Rate(t *testing.T) {
-	result, err := client.Rate("pivx", "usdc")
+	result, err := client.GetRate("pivx", "tusd")
 	if err != nil {
 		t.Fatal(err)
 	}
