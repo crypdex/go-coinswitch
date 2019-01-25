@@ -46,7 +46,7 @@ type PairsResult struct {
 
 type Rate struct {
 	Rate                    float64 `json:"rate"`
-	MinerFee                float64 `json:"miner_fee"`
+	MinerFee                float64 `json:"minerFee"`
 	LimitMinDepositCoin     float64 `json:"limitMinDepositCoin"`
 	LimitMaxDepositCoin     float64 `json:"limitMaxDepositCoin"`
 	LimitMinDestinationCoin float64 `json:"limitMinDestinationCoin"`

@@ -25,7 +25,7 @@ fmt.Println(rate)
 
 // {
 //   "rate": 0.75239778,
-//   "miner_fee": 0,
+//   "minerFee": 0.7,
 //   "limitMinDepositCoin": 40,
 //   "limitMaxDepositCoin": 7850,
 //   "limitMinDestinationCoin": 30.09591127,
